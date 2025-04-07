@@ -40,9 +40,6 @@ Below are sample results and visualizations of the reconstructed 3D scene using 
 > _Insert your 3D point cloud visualization here_  
 ![3D Point Cloud](./images/3d_point_cloud.png)
 
-### 📌 Reprojection Accuracy
-> _Optional: Add reprojection comparison or error plots here_
-
 ---
 
 ## 🧠 Observations & Insights
