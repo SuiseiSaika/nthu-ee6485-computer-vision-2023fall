@@ -1,9 +1,4 @@
----
-title: HW3 - Big vs Small Models
-
----
-
-# HW3 - Big vs Small Models
+# Homework3 - Big vs Small Models
 
 This assignment explores the relationship between **model size**, **training dataset size**, and **classification accuracy** using ResNet models on the CIFAR-10 dataset.
 
