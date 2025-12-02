@@ -49,7 +49,7 @@ Select images containing the highest number of objects.
 * Pros: encourages dense supervision
 * Cons: may overrepresent naturally crowded cameras
 
-### **2-3*. Averagely Select by Most Objects**
+### **2-3\star. Averagely Select by Most Objects**
 
 Balances object-rich images across all cameras.
 
@@ -60,7 +60,7 @@ Prefer images containing the largest set of distinct object categories.
 * Pros: encourages training diversity
 * Cons: class-dominant cameras may take over
 
-### **2-4*. Averagely Select by Most Classes**
+### **2-4\star. Averagely Select by Most Classes**
 
 Ensures class-diverse images per camera.
 
