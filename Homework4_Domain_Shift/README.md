@@ -49,7 +49,7 @@ Select images containing the highest number of objects.
 * Pros: encourages dense supervision
 * Cons: may overrepresent naturally crowded cameras
 
-### **2-3\*. Averagely Select by Most Objects**
+### **2-3*. Averagely Select by Most Objects**
 
 Balances object-rich images across all cameras.
 
@@ -60,9 +60,33 @@ Prefer images containing the largest set of distinct object categories.
 * Pros: encourages training diversity
 * Cons: class-dominant cameras may take over
 
-### **2-4\*. Averagely Select by Most Classes**
+### **2-4*. Averagely Select by Most Classes**
 
 Ensures class-diverse images per camera.
+
+**Table 1a. mAP@.5 Comparison**
+
+| Experiment/Camera | Baseline (Q1) | 2-1 | 2-2 | 2-3 | 2-3* | 2-4 | 2-4* |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 170 | .499 | .612 | **.66** | .657 | .658 | .656 | .658 |
+| 495 | .642 | .712 | **.772** | .766 | .749 | .752 | .753 |
+| 410 | .554 | .677 | .739 | .738 | .737 | **.758** | .687 |
+| 511 | .514 | .644 | .785 | .767 | .785 | **.793** | .763 |
+| 398 | .709 | .752 | .756 | .742 | **.761** | .728 | .754 |
+| 173 | .781 | **.877** | .845 | .852 | .861 | .849 | .833 |
+| **All** | .627 | .726 | .772 | .769 | **.776** | .77 | .759 |
+
+**Table 1b. mAP@.5:.95 Comparison**
+
+| Experiment/Camera | Baseline (Q1) | 2-1 | 2-2 | 2-3 | 2-3* | 2-4 | 2-4* |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 170 | .292 | **.376** | **.434** | .412 | .408 | .416 | .399 |
+| 495 | .377 | .43 | **.514** | **.488** | .511 | .47 | .451 |
+| 410 | .319 | .431 | .504 | **.507** | .476 | .506 | .436 |
+| 511 | .316 | .398 | **.549** | .503 | .507 | .515 | .499 |
+| 398 | .451 | **.486** | **.515** | .497 | .481 | .464 | .492 |
+| 173 | .49 | .567 | .573 | **.577** | .566 | .561 | .552 |
+| **All** | .375 | .452 | **.516** | .5 | .489 | .491 | .478 |
 
 ### **Results Summary**
 
@@ -110,6 +134,30 @@ Q3 focuses on methods that reduce domain shift between Q2/Q3 datasets.
 * Emphasizes hard-to-classify examples.
 * Slight improvement in mAP@0.5:0.95.
 
+**Table 2a. mAP@.5 Comparison**
+
+| Experiment/Camera | Baseline (Q1) | Baseline (2-2) | 3-1 | 3-2 | 3-3 | 3-4 | 3-5 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 170 | .499 | .66 | .603 | **.663** | .659 | .662 | .657 |
+| 495 | .642 | .772 | .678 | .771 | .772 | .772 | **.774** |
+| 410 | .554 | .739 | .691 | **.749** | .738 | .74 | .739 |
+| 511 | .514 | **.785** | .739 | **.785** | .777 | .783 | .782 |
+| 398 | .709 | .756 | .734 | **.76** | .758 | .759 | .756 |
+| 173 | .781 | .845 | .786 | **.849** | .845 | .847 | .843 |
+| **All** | .627 | .772 | .702 | **.773** | .771 | **.773** | .771 |
+
+**Table 2b. mAP@.5:.95 Comparison**
+
+| Experiment/Camera | Baseline (Q1) | Baseline (Q2) | 3-1 | 3-2 | 3-3 | 3-4 | 3-5 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 170 | .292 | .434 | .359 | .436 | .437 | **.439** | .436 |
+| 495 | .377 | .514 | .398 | .512 | .516 | .514 | **.518** |
+| 410 | .319 | .504 | .443 | **.515** | **.515** | .514 | .511 |
+| 511 | .316 | .549 | .486 | .55 | .55 | .553 | **.555** |
+| 398 | .451 | .515 | .419 | **.518** | **.518** | .517 | **.518** |
+| 173 | .49 | .573 | .504 | .578 | .579 | **.58** | .578 |
+| **All** | .375 | .516 | .428 | .518 | .519 | **.521** | .52 |
+
 ### **Results Summary**
 
 Across the five strategies:
@@ -143,13 +191,3 @@ Q3 demonstrates that pseudo labeling, freezing backbones, reweighting classes, a
 Across all experiments, the data selection and domain adaptation strategies have a larger impact on performance than model changes alone.
 
 ---
-
-
-Environment
-Python 3.8+
-
-PyTorch 1.13+
-
-YOLOv7 repository (https://github.com/WongKinYiu/yolov7)
-
-NVIDIA GPU (tested on RTX 3090)
