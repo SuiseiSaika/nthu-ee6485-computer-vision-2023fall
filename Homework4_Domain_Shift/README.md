@@ -191,3 +191,11 @@ Q3 demonstrates that pseudo labeling, freezing backbones, reweighting classes, a
 Across all experiments, the data selection and domain adaptation strategies have a larger impact on performance than model changes alone.
 
 ---
+
+## **Environment**
+Python 3.8+
+PyTorch 1.13+
+
+YOLOv7 repository (https://github.com/WongKinYiu/yolov7)
+
+NVIDIA GPU (tested on RTX 3090)
