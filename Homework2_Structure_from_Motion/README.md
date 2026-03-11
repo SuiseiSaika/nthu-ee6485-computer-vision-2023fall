@@ -37,7 +37,6 @@ This assignment implements key components of the Structure from Motion (SfM) pip
 Below are sample results and visualizations of the reconstructed 3D scene using the final camera pose and optimized 3D points.
 
 ### 📌 3D Point Cloud Visualization
-> _Insert your 3D point cloud visualization here_  
 ![3D Point Cloud](./images/3d_point_cloud.png)
 
 ---
